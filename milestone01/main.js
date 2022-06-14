@@ -175,3 +175,5 @@ const app = new Vue({
     contacts: contatti,
   },
 });
+
+// backtick = `

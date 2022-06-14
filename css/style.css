@@ -1,0 +1,85 @@
+:root {
+    --bs-success-rgb: 0, 150, 136;
+    --bs-secondary-rgb: 213, 249, 186;
+    --bs-gray: #d9dbd4;
+    --bs-gray-100: #eaeaea;
+    --bs-gray-200: #f3eeea;
+}
+
+
+body {
+    background-color: var(--bs-gray);
+    height: 100%;
+}
+
+.green-div {
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.custom-container {
+    background-color: var(--bs-gray-100);
+    height: 95vh;
+    position: relative;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    flex-grow: 1;
+
+}
+
+.navbar-brand.logo img {
+    height: 50px;
+    width: 50px;
+}
+
+.navbar-brand.logo {
+    padding: 0;
+}
+
+.navbar {
+    min-height: 70px;
+}
+
+.message-container {
+    background-image: url(../assets/mine.jpg);
+    padding: 2.5rem 6rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    width: 45%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sent-msg {
+    align-self: end;
+}
+
+.fs-7 {
+    font-size: 0.8rem;
+}
+
+.ratio1to1 {
+    aspect-ratio: 1/1;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.flex-shrink {
+    flex-shrink: 0;
+}
+
+.avatar {
+    width: 65px;
+    height: 65px;
+    margin-right: 0.5rem;
+}

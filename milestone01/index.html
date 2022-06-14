@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo List</title>
+    <title>Boolzapp
+    </title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.css'
         integrity='sha512-1hsteeq9xTM5CX6NsXiJu3Y/g+tj+IIwtZMtTisemEv3hx+S9ngaW4nryrNcPM4xGzINcKbwUJtojslX2KG+DQ=='
         crossorigin='anonymous' />
@@ -22,11 +23,176 @@
 </head>
 
 <body>
-    <div class=""></div>
+    <div class="bg-success green-div"></div>
     <div id="app">
         <div class="container">
+            <div class="custom-container">
+                <div class="row g-0 flex-grow d-flex ">
+                    <div class="col-md-4 pe-0 border-end d-flex flex-column flex-grow overflow-auto">
+                        <nav class="navbar navbar-expand-lg bg-light p-2">
+                            <div class="container-fluid">
+                                <a class="navbar-brand logo d-flex align-items-center" href="#">
+                                    <div class="rounded-circle overflow-hidden"><img src="../assets/avatar_io.jpg"
+                                            alt=""></div>
+                                    <span class="ms-2 text-muted">Sofia</span>
+                                </a>
 
+                                <div>
+                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="#"><i
+                                                    class="fa-solid fa-circle-notch text-muted fs-4"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#"><i
+                                                    class="fa-solid fa-message text-muted fs-4"></i></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#"><i
+                                                    class="fa-solid fa-ellipsis-vertical text-muted fs-4"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                        <div class="bg-info d-flex py-3 px-4">
+                            <a href="#">
+                                <div class="rounded-circle p-3 bg-white ratio1to1">
+                                    <i class="fa-solid fa-bell-slash text-info fs-3"></i>
+                                </div>
+                            </a>
+                            <div class="ms-3 d-flex flex-column justify-content-center">
+                                <p class="m-0">Ricevi notifiche di nuovi messaggi</p>
+                                <a href="#" class="text-muted fs-7">Attiva notifiche desktop</a>
+                            </div>
+                            <div>
+
+                            </div>
+
+                        </div>
+                        <div class="p-1">
+                            <div class="container-fluid">
+                                <form class="d-flex" role="search">
+                                    <input class="form-control me-2" type="search"
+                                        placeholder="Cerca o inizia una nuova chat" aria-label="Search">
+                                    <button class="btn btn-outline-success" type="submit">Search</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="contati">
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex" v-for="(contatto, i) in contacts">
+                                    <div class="rounded-circle overflow-hidden avatar">
+                                        <img class="avatar" :src="`../assets/avatar_${i + 1}.jpg`" alt="">
+                                    </div>
+                                    <div class="flex-grow">
+                                        <div>
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <p class="m-0 fs-5">{{ contatto.name }}</p>
+                                                <span class="text-muted">12:00</span>
+                                            </div>
+
+                                            <span class="text-muted">Ultimo messaggio inviato</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-8 ps-0 d-flex flex-column flex-grow overflow-auto">
+                        <div class="header d-flex flex-shrink">
+
+                            <nav class="navbar navbar-expand-lg bg-light w-100 p-2">
+                                <div class="container-fluid">
+                                    <a class="navbar-brand logo d-flex align-items-center" href="#">
+                                        <div class="rounded-circle overflow-hidden"><img src="../assets/avatar_1.jpg"
+                                                alt=""></div>
+                                        <div class="d-flex flex-column">
+                                            <span class="ms-2 text-dark">Michele</span>
+                                            <span class="ms-2 text-muted fs-6">Ultimo accesso oggi alle 12:00</span>
+                                        </div>
+
+                                    </a>
+
+                                    <div>
+                                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" aria-current="page" href="#"><i
+                                                        class="fa-solid fa-magnifying-glass text-muted fs-4"></i></a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#"><i
+                                                        class="fa-solid fa-paperclip text-muted fs-4"></i></a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#"><i
+                                                        class="fa-solid fa-ellipsis-vertical text-muted fs-4"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="message-container flex-grow overflow-auto">
+                            <div class="bg-secondary message rounded sent-msg">
+                                <p>Hai portato a spasso il cane?</p>
+                                <span class="text-muted fs-7 align-self-end">15:30</span>
+                            </div>
+                            <div class="bg-secondary message rounded sent-msg">
+                                <p>Hai portato a spasso il cane?</p>
+                                <span class="text-muted fs-7 align-self-end">15:30</span>
+                            </div>
+                            <div class="bg-secondary message rounded sent-msg">
+                                <p>Hai portato a spasso il cane?</p>
+                                <span class="text-muted fs-7 align-self-end">15:30</span>
+                            </div>
+                            <div class="bg-secondary message rounded sent-msg">
+                                <p>Hai portato a spasso il cane?</p>
+                                <span class="text-muted fs-7 align-self-end">15:30</span>
+                            </div>
+                            <div class="bg-secondary message rounded sent-msg">
+                                <p>Hai portato a spasso il cane?</p>
+                                <span class="text-muted fs-7 align-self-end">15:30</span>
+                            </div>
+                            <div class="bg-secondary message rounded sent-msg">
+                                <p>Hai portato a spasso il cane?</p>
+                                <span class="text-muted fs-7 align-self-end">15:30</span>
+                            </div>
+                            <div class="bg-secondary message rounded sent-msg">
+                                <p>Hai portato a spasso il cane?</p>
+                                <span class="text-muted fs-7 align-self-end">15:30</span>
+                            </div>
+                            <div class="bg-secondary message rounded sent-msg">
+                                <p>Hai portato a spasso il cane?</p>
+                                <span class="text-muted fs-7 align-self-end">15:30</span>
+                            </div>
+                            <div class="bg-secondary message rounded  sent-msg">
+                                <p>Ricordati di stendere i panni</p><span
+                                    class="text-muted fs-7 align-self-end">15:50</span>
+                            </div>
+                            <div class="bg-white message rounded received-msg">
+                                <p>Tutto fatto!</p>
+                                <span class="text-muted fs-7 align-self-end">16:15</span>
+                            </div>
+
+                        </div>
+                        <div class="bg-light d-flex justify-content-between p-1 align-items-center">
+                            <div>
+                                <a href="#"><i class="fa-solid fa-face-smile text-muted fs-4 px-4"></i></a>
+                            </div>
+                            <div class="form-group w-100">
+                                <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                            </div>
+                            <div>
+                                <a href="#"><i class="fa-solid fa-microphone text-muted fs-4 px-4"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
+    </div>
     </div>
     <script src="main.js"></script>
 </body>
