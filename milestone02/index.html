@@ -139,17 +139,11 @@
 
                             <div class="bg-secondary message rounded"
                                 v-for=" (msg, i, currentContact) in currentContactMessages">
-                                <p>{{currentContactMessages[currentContact[i]].message}}</p>
+
+                                <p>{{currentContactMessages[0].message}}</p>
                                 <span class=" text-muted fs-7 align-self-end">15:30</span>
                             </div>
-                            <!-- <div class="bg-secondary message rounded  sent-msg">
-                                <p>Ricordati di stendere i panni</p><span
-                                    class="text-muted fs-7 align-self-end">15:50</span>
-                            </div>
-                            <div class="bg-white message rounded received-msg">
-                                <p>Tutto fatto!</p>
-                                <span class="text-muted fs-7 align-self-end">16:15</span>
-                            </div> -->
+
 
                         </div>
                         <div class="bg-light d-flex justify-content-between p-1 align-items-center flex-shrink">
