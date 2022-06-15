@@ -186,7 +186,7 @@ const app = new Vue({
   data: {
     contacts: contatti,
     currentContact: contatti[0],
-    // currentContactMessages: contatti[0].messages,
+    currentContactMessages: contatti[0].messages,
   },
   methods: {
     selectContact(contact) {
