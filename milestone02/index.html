@@ -137,9 +137,12 @@
 
                         <div class="message-container flex-grow overflow-auto">
 
-                            <div class="bg-secondary message rounded" v-for=" (msg, i) in currentContact.messages">
+                            <div class="message rounded"
+                                :class="[msg.status == 'sent' ? 'sent-msg' + ' ' + 'bg-secondary' : 'bg-white']"
+                                v-for=" (msg, i) in currentContact.messages">
 
-                                <p>{{currentContact.messages[i].message}}</p>
+                                <p>
+                                    {{ msg.message }}</p>
                                 <span class=" text-muted fs-7 align-self-end">15:30</span>
                             </div>
 

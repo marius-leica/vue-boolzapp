@@ -66,6 +66,7 @@ body {
 }
 
 .sent-msg {
+    background-color: var(--bs-secondary-rgb);
     align-self: end;
 }
 
