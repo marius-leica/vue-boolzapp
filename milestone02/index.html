@@ -83,8 +83,10 @@
                         </div>
                         <div class="contati">
                             <ul class="list-group">
-                                <li class="list-group-item d-flex" v-for="(contatto, i) in contacts">
-                                    <div class="rounded-circle overflow-hidden avatar">
+                                <li class="list-group-item d-flex" @click=" selectContact(contatto)"
+                                    :class="{'active-user': currentContact === contatto}"
+                                    v-for="(contatto, i) in contacts">
+                                    <div class=" rounded-circle overflow-hidden avatar">
                                         <img class="avatar" :src="`../assets/avatar_${i + 1}.jpg`" alt="">
                                     </div>
                                     <div class="flex-grow">
@@ -102,15 +104,13 @@
                         </div>
                     </div>
                     <div class="col-md-8 h-100  d-flex flex-column flex-grow overflow-auto">
-
-
                         <nav class="navbar navbar-expand-lg bg-light w-100 p-2 flex-shrink">
                             <div class="container-fluid">
                                 <a class="navbar-brand logo d-flex align-items-center" href="#">
-                                    <div class="rounded-circle overflow-hidden"><img src="../assets/avatar_1.jpg"
-                                            alt=""></div>
+                                    <div class="rounded-circle overflow-hidden"><img
+                                            :src="`../assets/avatar${currentContact.avatar}.jpg`" alt=""></div>
                                     <div class="d-flex flex-column">
-                                        <span class="ms-2 text-dark">Michele</span>
+                                        <span class="ms-2 text-dark">{{currentContact.name}}</span>
                                         <span class="ms-2 text-muted fs-6">Ultimo accesso oggi alle 12:00</span>
                                     </div>
 
@@ -137,39 +137,19 @@
 
                         <div class="message-container flex-grow overflow-auto">
 
-                            <div class="bg-secondary message rounded sent-msg">
-                                <p>Hai portato a spasso il cane?</p>
-                                <span class="text-muted fs-7 align-self-end">15:30</span>
+                            <div class="bg-secondary message rounded"
+                                v-for=" (msg, i, currentContact) in currentContactMessages">
+                                <p>{{currentContactMessages[currentContact[i]].message}}</p>
+                                <span class=" text-muted fs-7 align-self-end">15:30</span>
                             </div>
-
-                            <div class="bg-secondary message rounded sent-msg">
-                                <p>Hai portato a spasso il cane?</p>
-                                <span class="text-muted fs-7 align-self-end">15:30</span>
-                            </div>
-                            <div class="bg-secondary message rounded sent-msg">
-                                <p>Hai portato a spasso il cane?</p>
-                                <span class="text-muted fs-7 align-self-end">15:30</span>
-                            </div>
-                            <div class="bg-secondary message rounded sent-msg">
-                                <p>Hai portato a spasso il cane?</p>
-                                <span class="text-muted fs-7 align-self-end">15:30</span>
-                            </div>
-                            <div class="bg-secondary message rounded sent-msg">
-                                <p>Hai portato a spasso il cane?</p>
-                                <span class="text-muted fs-7 align-self-end">15:30</span>
-                            </div>
-
-
-
-
-                            <div class="bg-secondary message rounded  sent-msg">
+                            <!-- <div class="bg-secondary message rounded  sent-msg">
                                 <p>Ricordati di stendere i panni</p><span
                                     class="text-muted fs-7 align-self-end">15:50</span>
                             </div>
                             <div class="bg-white message rounded received-msg">
                                 <p>Tutto fatto!</p>
                                 <span class="text-muted fs-7 align-self-end">16:15</span>
-                            </div>
+                            </div> -->
 
                         </div>
                         <div class="bg-light d-flex justify-content-between p-1 align-items-center flex-shrink">

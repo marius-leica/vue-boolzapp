@@ -32,7 +32,7 @@ body {
 
 .contati {
     overflow: auto;
-    height: 65vh;
+    /* height: 65vh; */
 }
 
 .navbar-brand.logo img {
@@ -89,4 +89,8 @@ body {
     width: 65px;
     height: 65px;
     margin-right: 0.5rem;
+}
+
+.active-user {
+    background-color: var(--bs-success-rgb);
 }
