@@ -241,6 +241,11 @@ const app = new Vue({
 
       return dayjsDate.format("HH:mm");
     },
+
+    //vogliamo una fucntion che cancella il messaggio selezionato
+    deleteMessage(i) {
+      this.currentContact.messages.splice(i, 1);
+    },
   },
 });
 

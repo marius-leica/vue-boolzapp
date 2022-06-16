@@ -95,3 +95,8 @@ body {
 .active-user {
     background-color: var(--bs-success-rgb);
 }
+
+.dropdown {
+    display: flex;
+    justify-content: end;
+}

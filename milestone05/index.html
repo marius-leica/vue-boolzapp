@@ -151,6 +151,16 @@
                             <div class="message rounded"
                                 :class="[msg.status == 'sent' ? 'sent-msg' + ' ' + 'bg-secondary' : 'bg-white']"
                                 v-for=" (msg, i) in currentContact.messages">
+                                <div class="dropdown">
+                                    <button class="btn btn-trasparent dropdown-toggle" type="button"
+                                        id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                        aria-expanded="false"></button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="#" @click="deleteMessage(i)">Cancella</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="#">Inoltra</a></li>
+                                    </ul>
+                                </div>
 
                                 <p>
                                     {{ msg.message }}</p>
