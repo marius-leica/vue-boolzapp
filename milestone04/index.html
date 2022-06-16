@@ -76,7 +76,8 @@
                                     <form class="d-flex" role="search">
                                         <input class="form-control me-2" v-model="search" type="search"
                                             placeholder="Cerca o inizia una nuova chat" aria-label="Search">
-                                        <button class="btn btn-outline-success" type="submit">Search</button>
+                                        <button class="btn btn-outline-success"
+                                            @click="searchContacts(search)">Search</button>
                                     </form>
                                 </div>
                             </div>
@@ -85,7 +86,7 @@
                             <ul class="list-group">
                                 <li class="list-group-item d-flex" @click=" selectContact(contatto)"
                                     :class="{'active-user': currentContact.avatar === contatto.avatar}"
-                                    v-for="(contatto, i) in contacts">
+                                    v-for="(contatto, i) in searchContacts(search)">
                                     <div class=" rounded-circle overflow-hidden avatar">
                                         <img class="avatar" :src="`../assets/avatar_${i + 1}.jpg`" alt="">
                                     </div>

@@ -224,6 +224,13 @@ const app = new Vue({
     getLastMessageDate(contact) {
       return contact.messages[contact.messages.length - 1].date;
     },
+
+    // vogliamo fare una ricerca per nome
+    searchContacts(search) {
+      return this.contacts.filter((contact) => {
+        return contact.name.toLowerCase().includes(search.toLowerCase());
+      });
+    },
   },
 });
 

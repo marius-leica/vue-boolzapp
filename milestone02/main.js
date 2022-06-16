@@ -186,30 +186,11 @@ const app = new Vue({
   data: {
     contacts: contatti,
     currentContact: contatti[0],
-    message: "",
+    // currentContactMessages: contatti[0].messages,
   },
   methods: {
     selectContact(contact) {
       this.currentContact = contact;
-    },
-    addMessage(message) {
-      this.currentContact.messages.push({
-        date: new Date().toLocaleString(),
-        message: message,
-        status: "sent",
-      });
-      //ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo
-      setTimeout(() => {
-        this.currentContact.messages.push({
-          date: new Date().toLocaleString(),
-          message: "ok",
-          status: "received",
-        });
-      }, 1000);
-    },
-    //vogliamo una fucntion che salva la data del ultimo messaggio da poterla poi stampare
-    getLastMessageDate(contact) {
-      return contact.messages[contact.messages.length - 1].date;
     },
   },
 });
