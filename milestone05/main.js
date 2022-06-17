@@ -225,6 +225,10 @@ const app = new Vue({
     },
     //vogliamo una fucntion che salva la data del ultimo messaggio da poterla poi stampare
     getLastMessageDate(contact) {
+      if (contact.messages.length === 0) {
+        return "";
+      }
+
       let dateLast = contact.messages[contact.messages.length - 1].date;
       return this.formatDate(dateLast);
     },
